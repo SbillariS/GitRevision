@@ -1,5 +1,6 @@
 package com.crud.controller;
 
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +19,14 @@ public class HomeController
 	@Autowired
 	SchoolServiceI ssi;
 	
+
 	@PostMapping("/saveSchool")
 	public ResponseEntity<School> saveSchoolDetails(@RequestBody School s)
 	{
 		School sch=ssi.saveSchoolDetails(s);
 		return new ResponseEntity<School>(sch,HttpStatus.CREATED);
-		
 	}
+	
 	@GetMapping("/getSchool/{id}")
     public ResponseEntity<School> getSchoolDetails(@PathVariable("id") int id)
     {
@@ -35,8 +37,5 @@ public class HomeController
             return new ResponseEntity<School>(HttpStatus.NOT_FOUND);
         }
     }
-	
-	
-	
 	
 }
