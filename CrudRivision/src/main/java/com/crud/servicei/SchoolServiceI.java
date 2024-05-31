@@ -8,4 +8,6 @@ public interface SchoolServiceI {
 
 	public School getSchoolDetailsById(int id);
 
+	
+	
 }

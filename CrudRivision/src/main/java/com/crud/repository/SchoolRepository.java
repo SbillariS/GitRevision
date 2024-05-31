@@ -8,4 +8,6 @@ import com.crud.model.School;
 @Repository
 public interface SchoolRepository extends JpaRepository<School, Integer>{
 
+	
+	
 }
