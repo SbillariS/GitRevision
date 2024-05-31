@@ -19,7 +19,6 @@ public class HomeController
 	@Autowired
 	SchoolServiceI ssi;
 	
-
 	@PostMapping("/saveSchool")
 	public ResponseEntity<School> saveSchoolDetails(@RequestBody School s)
 	{
