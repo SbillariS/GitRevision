@@ -25,8 +25,6 @@ public class HomeController
 		return new ResponseEntity<School>(sch,HttpStatus.CREATED);
 		
 	}
-	
-	
 	@GetMapping("/getSchool/{id}")
     public ResponseEntity<School> getSchoolDetails(@PathVariable("id") int id)
     {
@@ -37,9 +35,5 @@ public class HomeController
             return new ResponseEntity<School>(HttpStatus.NOT_FOUND);
         }
     }
-	
-	
-	
-	
 	
 }
