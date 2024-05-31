@@ -29,7 +29,7 @@ public class HomeController
     public ResponseEntity<School> getSchoolDetails(@PathVariable("id") int id)
     {
         School school = ssi.getSchoolDetailsById(id);
-        if(school != null) {
+        if(school != null) { 
             return new ResponseEntity<School>(school, HttpStatus.OK);
         } else {
             return new ResponseEntity<School>(HttpStatus.NOT_FOUND);
