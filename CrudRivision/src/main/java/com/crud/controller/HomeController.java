@@ -3,6 +3,8 @@ package com.crud.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,4 +25,18 @@ public class HomeController
 		return new ResponseEntity<School>(sch,HttpStatus.CREATED);
 		
 	}
+	
+	
+	@GetMapping("/getSchool/{id}")
+    public ResponseEntity<School> getSchoolDetails(@PathVariable("id") int id)
+    {
+        School school = ssi.getSchoolDetailsById(id);
+        if(school != null) {
+            return new ResponseEntity<School>(school, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<School>(HttpStatus.NOT_FOUND);
+        }
+    }
+	
+	
 }

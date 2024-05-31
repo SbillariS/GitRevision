@@ -6,4 +6,6 @@ public interface SchoolServiceI {
 
 	public School saveSchoolDetails(School s);
 
+	public School getSchoolDetailsById(int id);
+
 }
