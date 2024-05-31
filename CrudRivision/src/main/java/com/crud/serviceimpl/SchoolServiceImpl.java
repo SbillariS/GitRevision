@@ -18,4 +18,10 @@ public class SchoolServiceImpl implements SchoolServiceI{
 		return sr.save(s);
 	}
 
+	@Override
+	public School getSchoolDetailsById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
